@@ -1,24 +1,13 @@
-
-
-
-
-
-
-
 # pkcs8转rsa (pkcs1):
-
 openssl rsa -in pkcs8密钥 -out rsa密钥
 
 
 # 私钥(pkcs1和8不限)提取公钥(默认为pkcs8, 加参数-RSAPublicKey_out则为rsa)
-
 openssl rsa -in gz_boc_pkcs1.pem -pubout -out gz_boc_pub_pkcs8.pem
-
 openssl rsa -in gz_boc_pkcs1.pem  -RSAPublicKey_out -out gz_boc_pub_pkcs1.pem
 
 
 #rsa转pkcs8:
-
 openssl pkcs8 -topk8 -inform PEM -in gz_boc_pkcs1.key -outform PEM -nocrypt -out gz_boc_pkcs8.key
 
 
@@ -65,7 +54,8 @@ openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem
 # openssl生成PKCS#8格式
 openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -nocrypt
 
-
+# openssl生成PKCS#7格式
+openssl smime -sign -signer 509.pem -inkey 509的私钥.key -outform PEM -nodetach -in 待签名文本.txt
 
 
 openssl x509部分命令
