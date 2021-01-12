@@ -1,0 +1,99 @@
+
+
+
+
+
+
+
+# pkcs8转rsa (pkcs1):
+
+openssl rsa -in pkcs8密钥 -out rsa密钥
+
+
+# 私钥(pkcs1和8不限)提取公钥(默认为pkcs8, 加参数-RSAPublicKey_out则为rsa)
+
+openssl rsa -in gz_boc_pkcs1.pem -pubout -out gz_boc_pub_pkcs8.pem
+
+openssl rsa -in gz_boc_pkcs1.pem  -RSAPublicKey_out -out gz_boc_pub_pkcs1.pem
+
+
+#rsa转pkcs8:
+
+openssl pkcs8 -topk8 -inform PEM -in gz_boc_pkcs1.key -outform PEM -nocrypt -out gz_boc_pkcs8.key
+
+
+
+
+
+
+# der二进制证书转pem文本(x509)
+import ssl
+ssl.DER_cert_to_PEM_cert(der)
+
+
+# der二进制证书转pem文本(x509)
+openssl x509 -inform der -in eztdg.cert > a.pem
+
+
+# X509证书格式互转：
+# PEM-->DER(编码BASE64--DER)
+openssl x509 -outform der -in certificate.pem -out certificate.der
+# DER-->PEM(编码DER--BASE64)
+openssl x509 -inform der -in certificate.cer -out certificate.pem
+
+
+
+# x509证书(der二进制)证书提取公钥
+openssl x509 -inform der -pubkey -noout -in eztdg.cert>xxxxx.pem
+
+
+# x509证书(pem文本格式)提取公钥
+openssl x509 -pubkey -noout -in eztdg.pem  > pubkey.pem
+
+
+# pfx提取x509
+openssl pkcs12 -in test.pfx -nodes -out 509.pem
+
+# pfx提取私钥
+openssl pkcs12 -in test.pfx -nocerts -nodes -out pri.key
+
+
+# openssl生成PKCS#1格式
+openssl genrsa -out rsa_private_key.pem 1024
+openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem
+
+# openssl生成PKCS#8格式
+openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -nocrypt
+
+
+
+
+openssl x509部分命令
+打印出证书的内容：
+openssl x509 -in cert.pem -noout -text
+打印出证书的系列号
+openssl x509 -in cert.pem -noout -serial
+证书有效期
+openssl x509 -in cert.cer -noout -dates
+打印出证书的拥有者名字
+openssl x509 -in cert.pem -noout -subject
+以RFC2253规定的格式打印出证书的拥有者名字
+openssl x509 -in cert.pem -noout -subject -nameopt RFC2253
+在支持UTF8的终端一行过打印出证书的拥有者名字
+openssl x509 -in cert.pem -noout -subject -nameopt oneline -nameopt -escmsb
+打印出证书的MD5特征参数
+openssl x509 -in cert.pem -noout -fingerprint
+打印出证书的SHA特征参数
+openssl x509 -sha1 -in cert.pem -noout -fingerprint
+把PEM格式的证书转化成DER格式
+openssl x509 -in cert.pem -inform PEM -out cert.der -outform DER
+把一个证书转化成CSR
+openssl x509 -x509toreq -in cert.pem -out req.pem -signkey key.pem
+给一个CSR进行处理，颁发字签名证书，增加CA扩展项
+openssl x509 -req -in careq.pem -extfile openssl.cnf -extensions v3_ca -signkey key.pem -out cacert.pem
+给一个CSR签名，增加用户证书扩展项
+openssl x509 -req -in req.pem -extfile openssl.cnf -extensions v3_usr -CA cacert.pem -CAkey key.pem -CAcreateserial
+
+
+
+

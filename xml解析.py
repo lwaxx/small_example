@@ -9,27 +9,30 @@ def parse_xml():
         return '提交的不是xml数据，或者格式有误' 
 
     # 解析中行付款xml报文，生成付款信息
-    # Xml.xpath('/tdgService/reqHeader/serviceId/text()')
-    class Info:
-        pass
-    info = Info()
+    respCode = Xml.xpath('/tdgService/respHeader/respCode/text()')[0]
+    retMsg = Xml.xpath('/tdgService/respHeader/retMsg/text()')[0]
+    # class Info:
+    #     pass
+    # info = Info()
 
-    li = {}
+    # li = {}
     # 解析xml文件, 获取孙级别的数据 tag: text
-    for Xml2 in Xml.getchildren():
-        for Xml3 in Xml2.getchildren():
-            # di = {}
-            # setattr(info, Xml3.tag, Xml3.text)
-            # di[Xml3.tag] = Xml3.text
-            # li.update(di)
-            if Xml3.tag == 'respCode' and Xml3.text == "0000000":
-                return True
-            else:
-                return False
+    # for Xml2 in Xml.getchildren():
+    #     for Xml3 in Xml2.getchildren():
+    #         # di = {}
+    #         # setattr(info, Xml3.tag, Xml3.text)
+    #         # di[Xml3.tag] = Xml3.text
+    #         # li.update(di)
+    #         if Xml3.tag == 'respCode' and Xml3.text == "0000000":
+    #             return True
+    #         else:
+    #             return False
             
 
-    # if li["respCode"] == "0000000":
-    #     return True
+    if respCode == "0000000":
+        return True, retMsg
+    else:
+        return False
 
 
 print(parse_xml())
