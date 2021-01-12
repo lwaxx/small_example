@@ -38,7 +38,7 @@ def get_digest_value():
     p12 = crypto.load_pkcs12(pfx_buffer, '123456')
     signcert = p12.get_certificate()
     pkey = p12.get_privatekey()
-    bio_in = crypto._new_mem_buf()
+    bio_in = crypto._new_mem_buf(sha.encode())
 
     PKCS7_TEXT = 0x1
     PKCS7_NOSIGS = 0x4
