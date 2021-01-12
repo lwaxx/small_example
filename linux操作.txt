@@ -1,0 +1,3 @@
+# linux运行exe文件
+sudo apt-get install mono-vbnc
+mono ~/Downloads/ClassRPG.exe
