@@ -4,7 +4,6 @@ import sys
 import rsa
 import base64
 from OpenSSL import crypto
-from pkcs7 import PKCS7Encoder
 from OpenSSL.crypto import load_certificate, load_privatekey
 
 def get_digest_value():
