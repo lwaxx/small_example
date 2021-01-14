@@ -276,5 +276,7 @@ def createXml():
     fp = open('bookstore.xml', 'w')
     doc.writexml(fp, indent='\t', addindent='\t', newl='\n', encoding="utf-8")
 
+    return doc.toxml(encoding='utf-8').decode()
+
 
 createXml()
