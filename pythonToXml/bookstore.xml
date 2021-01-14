@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<ceb:CEB411Message guid="A4A369C6-5630-11EB-9042-0C9D92CA0368" version="1.0" xmlns:ceb="http://www.chinaport.gov.cn/ceb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<ceb:Payment>
+			<ceb:PaymentHead>
+				<ceb:guid>A4A36DAE-5630-11EB-9042-0C9D92CA0368</ceb:guid>
+				<ceb:appType>1</ceb:appType>
+				<ceb:appTime>20210114142048</ceb:appTime>
+				<ceb:appStatus>2</ceb:appStatus>
+				<ceb:payCode>1101110323</ceb:payCode>
+				<ceb:payName>测试企业</ceb:payName>
+				<ceb:payTransactionId>P0242250007</ceb:payTransactionId>
+				<ceb:orderNo>order2016030811340007</ceb:orderNo>
+				<ceb:ebpCode>1101110325</ceb:ebpCode>
+				<ceb:ebpName>测试企业</ceb:ebpName>
+				<ceb:payerIdType>1</ceb:payerIdType>
+				<ceb:payerIdNumber>130625021345225322</ceb:payerIdNumber>
+				<ceb:payerName>支付人</ceb:payerName>
+				<ceb:telephone>13256254445</ceb:telephone>
+				<ceb:amountPaid>19050</ceb:amountPaid>
+				<ceb:currency>142</ceb:currency>
+				<ceb:payTime>20160315153555</ceb:payTime>
+				<ceb:note></ceb:note>
+			</ceb:PaymentHead>
+		</ceb:Payment>
+		<ceb:BaseTransfer>
+			<ceb:copCode>1101180326</ceb:copCode>
+			<ceb:copName>物流企业</ceb:copName>
+			<ceb:dxpMode>DXP</ceb:dxpMode>
+			<ceb:dxpId>DXPLGS0000000001</ceb:dxpId>
+			<ceb:note></ceb:note>
+		</ceb:BaseTransfer>
+		<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+			<ds:SignedInfo>
+				<ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+				<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+				<ds:Reference URI="">
+					<ds:Transforms>
+						<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+					</ds:Transforms>
+					<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+					<ds:DigestValue>BCHLGdbM9LCI05o55hhkMjK5BzA=</ds:DigestValue>
+				</ds:Reference>
+			</ds:SignedInfo>
+			<ds:SignatureValue>oxfpHFmqVGHubPuG5bVseZMqnl0pmxrttwWqRXTuXp781Csdaz0AA9vCAjQ4W62rmyzdbO70cfMRBxfGhx7nyaEAt+y7DgO9hgDIPqoQWsktR8GgLuyCBvMWScxbhOEtDCDTFXxcbISoEJBmi9FQSnr/V7eqC1YFfo5XLqiXKRs=</ds:SignatureValue>
+			<ds:KeyInfo>
+				<ds:KeyName>0001</ds:KeyName>
+				<ds:X509Data>
+					<ds:X509Certificate>
+MIIDFTCCAf2gAwIBAgIEHdPkkzANBgkqhkiG9w0BAQUFADAcMQswCQYDVQQGEwJD
+TjENMAsGA1UEChMEQ0ZDQTAgFw0xMTA1MTYwMjQwMDVaGA80NzQ5MDQxMTAyNDAw
+NVowHDELMAkGA1UEBhMCQ04xDTALBgNVBAoTBENGQ0EwggEiMA0GCSqGSIb3DQEB
+AQUAA4IBDwAwggEKAoIBAQDe4Q202Vw/BluMii48Fc85TuUfCYSZN+FjxKGd6cp1
++iCor4NmQ6bOxKes9wUG7bkuiafAsyW/ZXS9US55G0hvmOWDR/hEOibdCTeQPyAY
+bLKeA4taXKSvffsZt+z6DSfoykLZ6Tq3fr5d8KJTUekeF6at7yWI4BvzJkB+kqEF
+X8xBrgFivQawR0Zm5HZlVF93ku/SZuxUtEgmMGm2oRQINL5IstWpMCYWo0bAjHQH
+0g2AoEOWqWJwAXqtQjE5XZ4QdsEvySOaQuZiTT4ZdNpHKS+P4IcF84795khgjCPD
+gccT5z9L0MRt6zNUlMSqqycHAwgdhGPuItXQ2dZv00SPAgMBAAGjXTBbMB8GA1Ud
+IwQYMBaAFA3IdybpGjEQ6lww0FuLz6NOwXLOMAwGA1UdEwQFMAMBAf8wCwYDVR0P
+BAQDAgHGMB0GA1UdDgQWBBQNyHcm6RoxEOpcMNBbi8+jTsFyzjANBgkqhkiG9w0B
+AQUFAAOCAQEAiA0lpAYcRMuxSR5F5c1dtibr/w1zWlL9/3roeQiIY8aykbbyo2fW
+USFDQXhjLOaBYPz2p9ZgAEOL0ck14pszxa/ERHAbObXIzxlizgZpDKpqokMrG3sQ
+sSW7luVfkDedOq43BOWOIwtRf9jjN+W9xr6n/XsI+/ebf3WDhba3gqOTsZWsPpYq
+GpxnGWYni+KWjUCTWzbuHyb1S+7uPaCtXCuvsk9fDPrxjQqpeld+kq/kly/6FjgV
+2crsXZ4U1Vkkco1T9TvAz6a72OmDq09fsAX5Bq+D7Rh3IrnD4uIhQoMIvGhs4PyX
+xhuiATCkTR0X30OcuNf+PbXFD5FWUWrZ4w==
+</ds:X509Certificate>
+				</ds:X509Data>
+			</ds:KeyInfo>
+		</ds:Signature>
+	</ceb:CEB411Message>
