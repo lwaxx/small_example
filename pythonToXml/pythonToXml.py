@@ -92,8 +92,8 @@ class Signature:
 
 
 
-HSM_SERVER = '10.4.12.40'
-HSM_PORT = '1025'
+HSM_SERVER = ''
+HSM_PORT = ''
 
 def make_hsm_send_data(signed_info, index=b'20'):
     # 组装签名请求数据，用于发给加密机
