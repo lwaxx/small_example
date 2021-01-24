@@ -1,4 +1,4 @@
-# pkcs8转rsa (pkcs1):
+# pkcs8转rsa (pkcs1):  
 openssl rsa -in pkcs8密钥 -out rsa密钥
 
 
