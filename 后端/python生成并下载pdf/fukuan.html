@@ -1,0 +1,211 @@
+
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+<style type='text/css'>
+@font-face { 
+        font-family: "simkai";
+        /*字体文件相对于py项目根目录下的路径，而不是相对于当前html*/
+        src: url('./Templates/simkai.ttf')
+}
+html, table, pre{
+    font-size: 12px;
+    font-family: "simkai";
+}
+h1{
+    font-size: 25px;
+    font-weight:bold;
+}
+
+h3{
+    font-size: 15px;
+    font-weight:bold;
+}
+
+
+</style>
+<style>
+</style>
+
+<div>
+    <h1 align="center">跨境业务人民币结算付款说明</h1>
+    <h3 align="right">付款日期： {{ order.apply_time|date:"Y 年 m 月 d 日" }}</h3>
+
+    <table border="0.5" cellpadding="0" cellspacing="0" width="100%">
+        <!-- <thead>
+            <tr>
+                <th>1</td>
+                <th>2</td>
+                <th>3</td>
+            </tr>
+        </thead> -->
+        <tbody>
+            <tr>
+                <td colspan=4>
+                     付款企业名称： 广东盛迪嘉电子商务股份有限公司<br/>
+                     组织机构代码（身份证件号）： 067173715
+                </td>
+            </tr>
+            <!-- <tr>
+                <td>组织机构代码（身份证件号）： 067173715</td>
+                <td></td>
+                <td></td>
+            </tr> -->
+            <tr>
+                <td width="30%" colspan="2"><pre> 收款人名称：{{ order.customer }}</pre></td>
+                <td width="35%"><pre> 收款人国别：{{ order.country }}</pre></td>
+                <td width="32%"><pre> 合同编号：</pre></td>
+            <tr>
+                <td colspan="2"><pre> 付款金额合计：{{ order.order_amount|rjust:"12" }}元</pre></td>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td colspan="2"><pre> 货物贸易金额：{{ order.order_amount|rjust:"12" }}元</pre></td>
+                <td><pre> 货物标的：网络货品</pre></td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td colspan="2"><pre> 预付货款项下：            元</pre></td>
+                <td><pre> 占合同金额比例：     %</pre></td>
+                <td><pre> 预计    天后报关（结账期）</pre></td>
+            </tr>
+
+
+            <tr>
+                <td width="5%" rowspan="3" align="center">已<br/>报<br/>关</td>
+                <td colspan="3">
+                     报关经营单位名称：<br/>组织机构代码：
+                </td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">
+                    <!-- ⃞　☑☒□√ -->
+                    <pre> 人民币报关  □</pre>
+                    <pre> 外币报关    □</pre>
+                    <pre>（如果外向报关，金额填写折<br/>  算人民币金额）</pre>
+                </td>
+                <td><pre> 一般贸易：              元</pre></td>
+                <td><pre> 进料加工：              元</pre></td>
+            </tr>
+
+            <tr>
+                <td><pre> 其他贸易：              元</pre></td>
+                <td><pre> 边境贸易：              元</pre></td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2" rowspan="2"><pre> 无货物报关</pre></td>
+                <td colspan="2"><pre> 海关特殊监管区域及保税监管所进出境物流货物：                  元</pre></td>
+            </tr>
+            <tr>
+                <td><pre> 离岸转手买卖：          元</pre></td>
+                <td><pre> 其他：                  元</pre></td>
+            </tr>
+
+
+
+            <tr>
+                <td colspan="2" rowspan="2"><pre> 服务贸易：           元</pre></td>
+                <td><pre> 国际收支编码： </pre></td>
+                <td><pre> 交易合同号： </pre></td>
+            </tr>
+            <tr>
+                <td><pre> 来料加工贸易项下：      元</pre></td>
+                <td><pre> 实际付款比例：     %</pre></td>
+            </tr>
+
+
+
+            <tr>
+                <td colspan="2" rowspan="2"><pre> 投资收益：           元</pre></td>
+                <td colspan="2"><pre> 国际收支编码： </pre></td>
+            </tr>
+            <tr>
+                <td colspan="2"><pre> 批准证书号（仅汇出直投收益时填报）：</pre></td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2"><pre> 经常转移：           元</pre></td>
+                <td colspan="2"><pre> 国际收支编码： </pre></td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2"><pre> 资本账户：           元</pre></td>
+                <td colspan="2"><pre> 国际收支编码：            交易合同号：</pre></td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2"><pre> 直接投资：           元</pre></td>
+                <td colspan="2"><pre> 国际收支编码：            批准证书号：</pre></td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><pre> 证券投资：           元</pre></td>
+                <td colspan="2"><pre> 国际收支编码：            批准证书号：</pre></td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><pre> 其他投资：           元</pre></td>
+                <td colspan="2"><pre> 国际收支编码：            批准证书号：</pre></td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2" rowspan="4"> 付款性质说明： 122030 境外平台+嘉易<br/>电商平台 网络购物</td>
+                <td><pre> 转口贸易：             □是  □否 </pre></td>
+                <td><pre> 转卖贸易：             □是  □否 </pre></td>
+            </tr>
+
+            <tr>
+                <td><pre> 符合税务部门相关要求： □是  □否 </pre></td>
+                <td><pre> 经常项目结算流程简化： □是  □否 </pre></td>
+            </tr>
+
+            <tr>
+                <td><pre> 跨境双向人民币资金池： □是  □否 </pre></td>
+                <td><pre> 经常项下跨境集中收付： □是  □否 </pre></td>
+            </tr>
+
+            <tr>
+                <td><pre> 直接投资结算流程简化： □是  □否 </pre></td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td colspan="4"><pre> 备注：</pre></td>
+            </tr>
+
+            <tr>
+                <td colspan="4">
+                     <pre> 本企业申明：本表所填内容真实无误。如有虚假，视为违反跨境人民币结算管理规定，将承担相应后果。</pre>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <pre>
+            单位公章或财务专用章                  填报人：               联系电话：
+        填表说明：
+        一般贸易：指海关监管贸易方式为 “0110” 的贸易类型。
+        进料加工贸易：指海关监管贸易方式为“0615 进料对口”、“0654 进料深加工”、“0664 进料
+        料件复出”、“0700 进料料件退换”、“0715 进料非对口”、“0864 进料边角料复出”。
+        边境贸易：指根据国家相关规定在指定口岸与毗邻国家之间开展的货物贸易．
+        其他贸易：不在上列范围内的海关监管贸易方式．
+        无货物报关：包括海关特殊监管区域及保税监管场所进出境物流货物、离岸转手买卖，以及其他
+        未达到海关规定申报金额的邮寄进口或从境外付款但境内交货等方式．
+    </pre>
+
+</div>
+
+
+
+
