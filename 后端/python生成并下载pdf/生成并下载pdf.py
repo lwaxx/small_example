@@ -11,7 +11,7 @@ def get(self, request):
 
     # PDF格式下载
     response = HttpResponse(content_type='application/pdf;charset=UTF-8')
-    response['Content-Disposition'] = 'attachment;filename=跨境人民币付款说明.pdf,'
+    response['Content-Disposition'] = 'attachment;filename=名字.pdf,'
     file_html = os.path.join(res_dir, 'fukuan.html')    # 模板文件的路径
     file_font = os.path.join(res_dir, 'simkai.ttf')  # 中文字体的路径
     with open(file_html, 'r') as f:

@@ -11,8 +11,8 @@ import copy
 """
 
 luxury_shops_gift_info = [
-    {'gift_id': 1, 'num': 1, 'prob': 1000, 'price': 88, 'tp': 2, 'name': '兰博基尼'},
-    {'gift_id': 2, 'num': 1, 'prob': 8000, 'price': 19, 'tp': 2, 'name': '飞船'},
+    {'gift_id': 1, 'num': 1, 'prob': 10000, 'price': 88, 'tp': 2, 'name': '兰博基尼'},
+    {'gift_id': 2, 'num': 1, 'prob': 80000, 'price': 19, 'tp': 2, 'name': '飞船'},
     {'gift_id': 3, 'num': 1, 'prob': 19000, 'price': 20, 'tp': 2, 'name': '派对'},
     {'gift_id': 4, 'num': 1, 'prob': 30000, 'price': 38, 'tp': 2, 'name': '待定'},
     {'gift_id': 5, 'num': 1, 'prob': 50000, 'price': 29, 'tp': 2, 'name': '唱片'},
