@@ -16,25 +16,14 @@ AnnualMedal = 11  # 冬日躺平
 NewGiftId = 422
 # 新礼物
 luxury_shops_gift_info = [
-    {'gift_id': 388, 'num': 1, 'prob': 1000, 'price': 8888, 'tp': Gift_Type, 'name': '海上轮船', 'big': True},
-    {'gift_id': 381, 'num': 1, 'prob': 8000, 'price': 1666, 'tp': Gift_Type, 'name': '城市烟花', 'big': True},
-    {'gift_id': 423, 'num': 1, 'prob': 25000, 'price': 520, 'tp': Gift_Type, 'name': '夏日营地', 'tips': '全新', 'big': True},
-    {'gift_id': 415, 'num': 1, 'prob': 50000, 'price': 299, 'tp': Gift_Type, 'name': '夏日唱片', 'small': True},
-    {'gift_id': 380, 'num': 1, 'prob': 171000, 'price': 128, 'tp': Gift_Type, 'name': '八音盒', 'small': True},
-    {'gift_id': 0, 'num': 0, 'prob': 695000, 'price': 1, 'tp': Gift_Type, 'name': '随机礼物'},
-    {'gift_id': 4443, 'num': 1, 'prob': 50000, 'price': 100, 'tp': Coupon_Type, 'name': '抵扣券', 'tips': '黄金商店'},
+    {'gift_id': 1, 'num': 1, 'prob': 1000, 'price': 2, 'tp': Gift_Type, 'name': '轮船', 'big': True},
+    {'gift_id': 1, 'num': 1, 'prob': 8000, 'price': 2, 'tp': Gift_Type, 'name': '烟花', 'big': True},
+    {'gift_id': 1, 'num': 1, 'prob': 25000, 'price': 2, 'tp': Gift_Type, 'name': '营地', 'tips': '全新', 'big': True},
+    {'gift_id': 1, 'num': 1, 'prob': 50000, 'price': 2, 'tp': Gift_Type, 'name': '唱片', 'small': True},
+    {'gift_id': 1, 'num': 1, 'prob': 171000, 'price': 2, 'tp': Gift_Type, 'name': '八音盒', 'small': True},
+    {'gift_id': 0, 'num': 0, 'prob': 695000, 'price': 2, 'tp': Gift_Type, 'name': '随机'},
+    {'gift_id': 1, 'num': 1, 'prob': 50000, 'price': 2, 'tp': Coupon_Type, 'name': '券'},
 ]
-
-lucky_shops_gift_info = [
-    {'gift_id': 407, 'num': 1, 'prob': 1000, 'price': 30999, 'tp': Gift_Type, 'name': '梦幻城堡', 'big': True},
-    {'gift_id': 414, 'num': 1, 'prob': 3000, 'price': 2199, 'tp': Gift_Type, 'name': '至尊嘉年华', 'big': True},
-    {'gift_id': 391, 'num': 1, 'prob': 10000, 'price': 999, 'tp': Gift_Type, 'name': '普罗旺斯', 'big': True},
-    {'gift_id': 403, 'num': 1, 'prob': 35000, 'price': 521, 'tp': Gift_Type, 'name': '海边度假', 'big': True},
-    {'gift_id': 420, 'num': 1, 'prob': 150000, 'price': 399, 'tp': Gift_Type, 'name': '时光沙漏', 'small': True},
-    {'gift_id': 284, 'num': 1, 'prob': 220000, 'price': 288, 'tp': Gift_Type, 'name': '小丑炸弹', 'small': True},
-    {'gift_id': 353, 'num': 1, 'prob': 581000, 'price': 200, 'tp': Gift_Type, 'name': '水晶风铃', 'small': True},
-]
-
 
 
 def GetRewardProbTest(reward_conf):
@@ -108,8 +97,4 @@ if __name__ == "__main__":
     # print("幸运宝箱概率2")
     # GetRewardProbTest(winter2022_drawreward_list_level2)
     # print("\n")
-    print("黄金宝箱概率")
-    GetRewardProbTest(lucky_shops_gift_info)
-    print("\n")
-    print("惊喜宝箱概率")
     GetRewardProbTest(luxury_shops_gift_info)
