@@ -16,6 +16,25 @@ def weighted_random(items):
 
 
 # method2
+def get_random_by_length(arr):
+    """根据数组内数字的长度取值，长度都一样的时候没啥用"""
+    # arr=[20, 34, 160,25,45,67,345,234]
+    #arr_jangci为将高积分增加了参与抽奖的次数的抽奖池对像
+    arr_jangci=[]
+    for i in arr:
+        ii=len(str(i))+1
+    #先取每个积分的长度，长度是多少就在奖池内增加多少个抽奖样本，这样就增加了中奖概率
+        for j in range(1,ii):
+            arr_jangci.append(i)
+    #查看重新组合过后的奖池数组
+    print(arr_jangci)
+    #在奖池里随机抽出一个对象作为中奖者
+    drawed = random.sample(arr_jangci,1)
+    print(drawed)
+    return drawed
+
+
+# method3
 class WeightRandom: 
     def __init__(self, items): 
         weights = [w for _,w in items] 
