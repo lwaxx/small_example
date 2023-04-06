@@ -11,14 +11,14 @@ Noble_Type = 4
 Frame_Type = 5
 Medal_Type = 6
 
-TravelWordGiftId = 359
-PhonographGiftId = 0
-BlueRoseGiftId = 261
-LoveBearGiftId = 1342
+TravelWordGiftId = 1
+PhonographGiftId = 1
+BlueRoseGiftId = 1
+LoveBearGiftId = 1
 PinkFerrariEffectId = 1
-PictureFrameId = 32
-FallInLoveGiftId = 262
-RoseGiftId = 9
+PictureFrameId = 1
+FallInLoveGiftId = 1
+RoseGiftId = 1
 
 fanpai2021_drawreward_list_low = [
     {'gift_id': TravelWordGiftId, 'num': 1, 'prob': 600, 'price': 999, 'tp': Gift_Type, 'big': True, 'name': '环游世界*1'},
