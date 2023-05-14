@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <data>
+        <template id="assets_backend" name="detail_line_checkbox" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/after_sale_detect/static/src/js/detail_line_checkbox.js"/>
+            </xpath>
+        </template>
+    </data>
+
+    <record id="uncertain_order_line_search" model="ir.ui.view">
+        <field name="name">uncertain_order_line_search</field>
+        <field name="model">uncertain.order.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id"/>
+                <field name="product_id"/>
+            </tree>
+
+        </field>
+    </record>
+
+
+    <record id="bind_aso_form" model="ir.ui.view">
+        <field name="name">Bind ASO</field>
+        <field name="model">bind.aso.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="after_sale_order_id" string="售后单"/>
+                        <field name="aso_cat" readonly="1" string="售后单类型"/>
+                        <field name="uncertain_order_id" invisible="1"/>
+                        <field name="after_sale_order_line_id" attrs="{'invisible': [('form_view_str', '!=', 'bind')],
+                                                                       'required': [('form_view_str', '=', 'bind')]}"
+                                        string="产品"/>
+                        <field name="form_view_str" invisible="1"/>
+                    </group>
+                    <notebook attrs="{'invisible': [('form_view_str', '!=', 'multi')]}">
+                        <page string="售后/拆包登记单明细">
+                            <div class="btn-group">
+                                <span style="margin-left: 3px;">
+                                    <button name="action_select_lines" string="全选" type="object" class="btn-primary"/>
+                                </span>
+                                <span style="margin-left: 3px;">
+                                    <button name="action_deselect_lines" string="取消全选" type="object" class="btn-primary"/>
+                                </span>
+                                <span style="margin-left: 3px;">
+                                    <button name="batch_update_selected" string="批量修改" type="object" class="btn-primary"/>
+                                </span>
+                                <span style="margin-left: 3px;">
+                                    <button name="batch_unlink_selected" string="批量删除" type="object" class="btn-primary"/>
+                                </span>
+                            </div>
+                            <field name="line_ids" widget="one2many_checkbox">
+                                <tree create="0" editable="bottom" hasSelectors_one2Many="1">
+<!--                                    <field name="selected" widget="boolean_checkbox"/>-->
+                                    <field name="asol_id_id"/>
+                                    <field name="product_id" readonly="1" string="产品" force_save="1"/>
+                                    <field name="is_complete" string="是否完品"/>
+                                    <!--<field name="asol_qty" invisible="1" string="售后单数量" force_save="1"/>-->
+                                    <field name="asol_id" force_save="1" invisible="1"/>
+                                    <!-- <field name="uol_product_id" readonly="0" string="拆包登记单产品" required="0"/> -->
+                                    <field name="uol_line_id" readonly="0" string="拆包登记单产品" required="0" context="{'tree_view_ref': 'uncertain_order_line_search'}"/>
+                                    <field name="uol_qty" readonly="1" string="拆包登记单数量" force_save="1"/>
+                                    <field name="price_unit" readonly="1" string="单价" force_save="1" invisible="1"/>
+                                    <field name="amount_total" readonly="1" string="金额" force_save="1" invisible="1"/>
+                                </tree>
+                            </field>
+
+                        </page>
+                    </notebook>
+                </sheet>
+                <footer>
+                    <button name="action_comfirmed" string="确定" type="object" class="oe_highlight"/>
+                    <seperator/>
+                    <button string="取消" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <!--<record id="bind_aso_line_form" model="ir.ui.view">-->
+        <!--<field name="name">Bind ASO Line</field>-->
+        <!--<field name="model">bind.aso.line.wizard</field>-->
+        <!--<field name="arch" type="xml">-->
+            <!--<form>-->
+                <!--<sheet>-->
+                    <!--<group>-->
+                        <!--<field name="product_id"/>-->
+                        <!--<field name="uol_qty"/>-->
+                    <!--</group>-->
+                    <!--<notebook>-->
+                        <!--<page string="Test">-->
+                            <!--<field name="line_ids">-->
+                                <!--<tree>-->
+                                    <!--<field name="product_id"/>-->
+                                    <!--<field name="qty"/>-->
+                                <!--</tree>-->
+                            <!--</field>-->
+                        <!--</page>-->
+                    <!--</notebook>-->
+                <!--</sheet>-->
+            <!--</form>-->
+        <!--</field>-->
+    <!--</record>-->
+
+
+
+
+</odoo>
