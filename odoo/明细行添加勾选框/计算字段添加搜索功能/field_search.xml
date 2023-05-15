@@ -1,0 +1,16 @@
+<record id="view_my_model_filter" model="ir.ui.view">
+    <field name="name">my.model.filter</field>
+    <field name="model">my.model</field>
+    <field name="arch" type="xml">
+        <search>
+            <filter string="My Filter" name="my_filter" domain="[('calculated_field','>=',10)]"/>
+            <field name="name"/>
+            <field name="calculated_field" search="_search_calculated_field"/>
+        </search>
+    </field>
+</record>
+
+
+<!-- 上面代码中，第6、8行为一个整体，因为odoo中没有存储在数据库中的计算字段，不能使用filter视图标签，
+所以使用field标签，并且添加filer标签进行搜索 -->
+
